@@ -33,14 +33,14 @@ This project analyzes simulated IoT sensor data using **PySpark SQL**, applying 
 
 ### 🖥 Sample Output:
 
-```text
-sensor_id	timestamp	            temperature	humidity	location	        sensor_type
-1046	    2025-04-05T23:39:06Z	15.35	      36.92	    BuildingB_Floor1	TypeB
-1002	    2025-04-06T21:39:03Z	28.18	      35.86	    BuildingB_Floor1	TypeB
-1029	    2025-04-04T22:39:02Z	30.01	      61.66	    BuildingB_Floor1	TypeB
-1076	    2025-04-05T15:14:28Z	23.05	      59.53	    BuildingB_Floor2	TypeC
-1018	    2025-04-04T07:58:54Z	15.87	      42.13	    BuildingB_Floor1	TypeC
-```
+| sensor_id | timestamp           | temperature | humidity | location          | sensor_type |
+|-----------|---------------------|-------------|----------|-------------------|-------------|
+| 1046      | 2025-04-05T23:39:06Z| 15.35       | 36.92    | BuildingB_Floor1  | TypeB       |
+| 1002      | 2025-04-06T21:39:03Z| 28.18       | 35.86    | BuildingB_Floor1  | TypeB       |
+| 1029      | 2025-04-04T22:39:02Z| 30.01       | 61.66    | BuildingB_Floor1  | TypeB       |
+| 1076      | 2025-04-05T15:14:28Z| 23.05       | 59.53    | BuildingB_Floor2  | TypeC       |
+| 1018      | 2025-04-04T07:58:54Z| 15.87       | 42.13    | BuildingB_Floor1  | TypeC       |
+
 
 ### 📊 Analysis:
 - Data includes multiple floors and buildings with varied sensor types.
@@ -56,13 +56,12 @@ sensor_id	timestamp	            temperature	humidity	location	        sensor_typ
 
 ### Output (`task2_output.csv`):
 
-```text
-location	        avg_temperature	    avg_humidity
-BuildingB_Floor1	25.24	              55.78
-BuildingA_Floor2	24.76	              56.42
-BuildingB_Floor2	24.36	              54.23
-BuildingA_Floor1	24.34	              56.22
-```
+| location           | avg_temperature | avg_humidity |
+|--------------------|-----------------|--------------|
+| BuildingB_Floor1   | 25.24           | 55.78        |
+| BuildingA_Floor2   | 24.76           | 56.42        |
+| BuildingB_Floor2   | 24.36           | 54.23        |
+| BuildingA_Floor1   | 24.34           | 56.22        |
 
 ### 📊 Analysis:
 - BuildingB_Floor1 is the warmest and driest.
@@ -101,14 +100,13 @@ hour_of_day	avg_temp
 
 ### Output:
 
-```text
-sensor_id	avg_temp	rank_temp
-1002	    29.27	    1
-1095	    29.05	    2
-1056	    28.73	    3
-1026	    28.68	    4
-1084	    28.42	    5
-```
+| sensor_id | avg_temp | rank_temp |
+|-----------|----------|-----------|
+| 1002      | 29.27    | 1         |
+| 1095      | 29.05    | 2         |
+| 1056      | 28.73    | 3         |
+| 1026      | 28.68    | 4         |
+| 1084      | 28.42    | 5         |
 
 ### 📊 Analysis:
 - Sensor 1002 is the hottest on average — may need recalibration or is located in a hotter environment.
@@ -125,13 +123,12 @@ sensor_id	avg_temp	rank_temp
 
 ### Sample Output (partial):
 
-```text
-location	        0	    1	    2	    ...	    23
-BuildingA_Floor1	22.26	25.31	24.59	...	    25.31
-BuildingB_Floor2	25.06	23.64	24.90	...	    25.28
-BuildingA_Floor2	24.23	24.89	25.90	...	    24.14
-BuildingB_Floor1	23.70	25.06	27.23	...	    21.96
-```
+| location         | 0    | 1    | 2    | ... | 23   |
+|------------------|------|------|------|-----|------|
+| BuildingA_Floor1 | 22.26| 25.31| 24.59| ... | 25.31|
+| BuildingB_Floor2 | 25.06| 23.64| 24.90| ... | 25.28|
+| BuildingA_Floor2 | 24.23| 24.89| 25.90| ... | 24.14|
+| BuildingB_Floor1 | 23.70| 25.06| 27.23| ... | 21.96|
 
 ### 📊 Analysis:
 - BuildingA_Floor2 shows highest temps around hours 2–4 and 14–16.
